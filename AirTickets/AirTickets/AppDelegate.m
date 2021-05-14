@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,10 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    CGRect windowFrame = UIScreen.mainScreen.bounds;
-    self.window = [[UIWindow alloc] initWithFrame: windowFrame];
+    CGRect frame = UIScreen.mainScreen.bounds;
+    self.window = [[UIWindow alloc] initWithFrame: frame];
         
-    ViewController *vc = [ViewController new];
+    MainViewController *vc = [MainViewController new];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window.rootViewController = navController;
