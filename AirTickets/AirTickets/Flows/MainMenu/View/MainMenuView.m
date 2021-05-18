@@ -23,7 +23,7 @@
 }
 
 - (void)configureUI {
-    self.backgroundColor = UIColorFromRGB(orangeCrayolaColor);
+    self.backgroundColor = UIColor.whiteColor;//UIColorFromRGB(orangeCrayolaColor);
     
     self.arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -31,9 +31,9 @@
     NSArray *buttons = [[NSArray alloc] initWithObjects:self.arrivalButton, self.departureButton, nil];
     for (UIButton *button in buttons) {
         button.tintColor = UIColor.whiteColor;
-        button.backgroundColor = UIColorFromRGB(orangeSodaColor);
+        button.backgroundColor = UIColorFromRGB(darkColor);
         button.layer.cornerRadius = buttonCornerRadius;
-        button.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        button.titleLabel.font = [UIFont systemFontOfSize:17.0];
     }
     
     UIWindow *window = UIApplication.sharedApplication.windows.firstObject;

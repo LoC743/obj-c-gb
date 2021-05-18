@@ -14,6 +14,8 @@
     MainMenuPresenter *presenter = [[MainMenuPresenter alloc] initWithRouter:router];
     
     MainMenuViewController *viewController = [[MainMenuViewController alloc] initWithPresenter:presenter];
+    presenter.viewInput = viewController;
+    router.viewController = viewController;
     
     return viewController;
 }

@@ -6,13 +6,20 @@
 //
 
 #import "MainMenuRouter.h"
+#import "PlaceBuilder.h"
 
 @implementation MainMenuRouter
 
-- (void)moveToFromWhere {
+- (void)moveToDepartureWithMenuDelegate:(NSObject<MainMenuDelegate>*)delegate {
+    PlaceViewController *placeViewController = (PlaceViewController *)[PlaceBuilder buildWithMenuDelegate:delegate andPlaceType:PlaceTypeDeparture];
+    
+    [self.viewController.navigationController pushViewController:placeViewController animated:YES];
 }
 
-- (void)moveToWhere {
+- (void)moveToArrivalWithMenuDelegate:(NSObject<MainMenuDelegate>*)delegate {
+    PlaceViewController *placeViewController = (PlaceViewController *)[PlaceBuilder buildWithMenuDelegate:delegate andPlaceType:PlaceTypeArrival];
+    
+    [self.viewController.navigationController pushViewController:placeViewController animated:YES];
 }
 
 @end

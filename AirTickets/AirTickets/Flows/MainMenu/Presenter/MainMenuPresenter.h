@@ -8,21 +8,28 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MainMenuRouter.h"
+#import "MainMenuView.h"
+#include "DataManager.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol MainMenuViewInput <NSObject>
-
-@end
-
 @protocol MainMenuViewOutput <NSObject>
 
-- (void)viewDidMoveToFromWhere;
-- (void)viewDidMoveToWhere;
+- (void)viewDidMoveToDeparture;
+- (void)viewDidMoveToArrival;
 
 @end
 
-@interface MainMenuPresenter : NSObject <MainMenuViewOutput>
+@protocol MainMenuViewInput <NSObject>
+
+@property (nonatomic) SearchRequest searchRequest;
+
+- (MainMenuView *)mainMenuView;
+
+@end
+
+@interface MainMenuPresenter : NSObject <MainMenuViewOutput, MainMenuDelegate>
 
 @property (strong, nonatomic) NSObject<MainMenuRouterInput> *router;
 @property (weak, nonatomic) UIViewController<MainMenuViewInput> *viewInput;

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSObject<MainMenuViewOutput> *presenter;
 
+@property (nonatomic) SearchRequest searchRequest;
+
 - (instancetype)initWithPresenter:(NSObject<MainMenuViewOutput>*)presenter;
 
 @end
