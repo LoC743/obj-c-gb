@@ -18,7 +18,12 @@ typedef enum DataSourceType {
     DataSourceTypeAirport
 } DataSourceType;
 
-NS_ASSUME_NONNULL_BEGIN
+typedef struct SearchRequest {
+    __unsafe_unretained NSString *origin;
+    __unsafe_unretained NSString *destionation;
+    __unsafe_unretained NSDate *departDate;
+    __unsafe_unretained NSDate *returnDate;
+} SearchRequest;
 
 @interface DataManager : NSObject
 
@@ -30,5 +35,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSArray *airports;
 
 @end
-
-NS_ASSUME_NONNULL_END

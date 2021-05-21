@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "MainMenuBuilder.h"
 
 @interface AppDelegate ()
 
@@ -20,14 +20,14 @@
     CGRect frame = UIScreen.mainScreen.bounds;
     self.window = [[UIWindow alloc] initWithFrame: frame];
         
-    MainViewController *vc = [MainViewController new];
+    MainMenuViewController *vc = (MainMenuViewController*)[MainMenuBuilder build];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    
     
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 
     return YES;
 }
-
 
 @end
