@@ -7,6 +7,8 @@
 
 #import "MainViewController.h"
 #import "NetworkManger.h"
+#import "NewsTableViewCell.h"
+#import "ArticleWebPageViewController.h"
 
 @interface MainViewController ()
 
@@ -43,11 +45,37 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return [UITableViewCell new];
+    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewsTableViewCell.reusableCellIdentifier];
+    
+    if (!cell) {
+        cell = [NewsTableViewCell new];
+    }
+    
+    [cell configureWithArticle:self.newsArray[indexPath.row]];
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.newsArray.count;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 300.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    News *article = self.newsArray[indexPath.row];
+    NSURL *articleURL = [NSURL URLWithString:article.url];
+    
+    ArticleWebPageViewController *vc = [[ArticleWebPageViewController alloc] initWithURL:articleURL];
+
+    [self.navigationController pushViewController:vc animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

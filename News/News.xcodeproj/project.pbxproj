@@ -14,6 +14,8 @@
 		8A3B73492657AA11009E4134 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B73482657AA11009E4134 /* main.m */; };
 		8A3B73552657B0E2009E4134 /* NetworkManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B73542657B0E2009E4134 /* NetworkManger.m */; };
 		8A3B73592657B198009E4134 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B73582657B198009E4134 /* News.m */; };
+		8AEF2BB02658E72E001F533E /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF2BAF2658E72E001F533E /* NewsTableViewCell.m */; };
+		8AEF2BC0265909FF001F533E /* ArticleWebPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEF2BBF265909FF001F533E /* ArticleWebPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		8A3B73542657B0E2009E4134 /* NetworkManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManger.m; sourceTree = "<group>"; };
 		8A3B73572657B198009E4134 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		8A3B73582657B198009E4134 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		8AEF2BAE2658E72E001F533E /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		8AEF2BAF2658E72E001F533E /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		8AEF2BBE265909FF001F533E /* ArticleWebPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleWebPageViewController.h; sourceTree = "<group>"; };
+		8AEF2BBF265909FF001F533E /* ArticleWebPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleWebPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +68,12 @@
 		8A3B73352657AA11009E4134 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				8AEF2BBB265909B2001F533E /* Controllers */,
+				8AEF2BAD2658E701001F533E /* NewsTableViewCell */,
 				8A3B73502657B08F009E4134 /* Services */,
 				8A3B734F2657B084009E4134 /* Models */,
 				8A3B73362657AA11009E4134 /* AppDelegate.h */,
 				8A3B73372657AA11009E4134 /* AppDelegate.m */,
-				8A3B733C2657AA11009E4134 /* MainViewController.h */,
-				8A3B733D2657AA11009E4134 /* MainViewController.m */,
 				8A3B73422657AA11009E4134 /* Assets.xcassets */,
 				8A3B73442657AA11009E4134 /* LaunchScreen.storyboard */,
 				8A3B73472657AA11009E4134 /* Info.plist */,
@@ -108,6 +114,42 @@
 				8A3B73582657B198009E4134 /* News.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		8AEF2BAD2658E701001F533E /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8AEF2BAE2658E72E001F533E /* NewsTableViewCell.h */,
+				8AEF2BAF2658E72E001F533E /* NewsTableViewCell.m */,
+			);
+			path = NewsTableViewCell;
+			sourceTree = "<group>";
+		};
+		8AEF2BBB265909B2001F533E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AEF2BBD265909CE001F533E /* ArticleWebPageViewController */,
+				8AEF2BBC265909BE001F533E /* Main */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8AEF2BBC265909BE001F533E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8A3B733C2657AA11009E4134 /* MainViewController.h */,
+				8A3B733D2657AA11009E4134 /* MainViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8AEF2BBD265909CE001F533E /* ArticleWebPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8AEF2BBE265909FF001F533E /* ArticleWebPageViewController.h */,
+				8AEF2BBF265909FF001F533E /* ArticleWebPageViewController.m */,
+			);
+			path = ArticleWebPageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +222,10 @@
 			files = (
 				8A3B73592657B198009E4134 /* News.m in Sources */,
 				8A3B733E2657AA11009E4134 /* MainViewController.m in Sources */,
+				8AEF2BB02658E72E001F533E /* NewsTableViewCell.m in Sources */,
 				8A3B73382657AA11009E4134 /* AppDelegate.m in Sources */,
 				8A3B73552657B0E2009E4134 /* NetworkManger.m in Sources */,
+				8AEF2BC0265909FF001F533E /* ArticleWebPageViewController.m in Sources */,
 				8A3B73492657AA11009E4134 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = News/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = News/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
