@@ -6,16 +6,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocationService.h"
 #import "MapInteractor.h"
 #import "MapRouter.h"
+#import "MapView.h"
+#import "City.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MapViewInput <NSObject>
 
+- (MapView *)mapView;
+
+@property (nonatomic, strong) LocationService *locationService;
+@property (nonatomic, strong) City *origin;
+@property (nonatomic, strong) NSArray *prices;
+
 @end
 
 @protocol MapViewOutput <NSObject>
+
+- (void)dataLoadedSuccessfully;
+
+- (void)updateCurrentLocation:(NSNotification *)notification;
+
+- (void)setPrices:(NSArray *)prices;
 
 @end
 

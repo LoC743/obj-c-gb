@@ -6,8 +6,10 @@
 //
 
 #import "MapViewController.h"
+#import "LocationService.h"
 
 @interface MapViewController ()
+
 
 @end
 
@@ -21,10 +23,37 @@
     return self;
 }
 
+- (void)loadView {
+    [super loadView];
+    
+    self.view = [MapView new];
+}
+
+- (MapView *)mapView {
+    return (MapView *)self.view;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.cyanColor;
+    
+    [self mapView].mapKitView.delegate = self;
+    
+    [DataManager.sharedInstance loadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiceDidUpdateCurrentLocation object:nil];
+}
+
+- (void)dataLoadedSuccessfully {
+    [self.presenter dataLoadedSuccessfully];
+}
+
+- (void)updateCurrentLocation:(NSNotification *)notification {
+    [self.presenter updateCurrentLocation:notification];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

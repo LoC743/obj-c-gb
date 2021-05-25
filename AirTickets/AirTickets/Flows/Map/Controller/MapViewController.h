@@ -11,11 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MapViewController : UIViewController <MapViewInput>
+@interface MapViewController : UIViewController <MapViewInput, MKMapViewDelegate>
 
 @property (strong, nonatomic) NSObject<MapViewOutput> *presenter;
 
 - (instancetype)initWithPresenter:(NSObject<MapViewOutput>*)presenter;
+
+@property (nonatomic, strong) LocationService *locationService;
+@property (nonatomic, strong) City *origin;
+@property (nonatomic, strong) NSArray *prices;
 
 @end
 
