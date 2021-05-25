@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MainMenuRouter.h"
+#import "MainMenuInteractor.h"
 #import "MainMenuView.h"
 #include "DataManager.h"
 
@@ -17,7 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MainMenuViewOutput <NSObject>
 
 - (void)viewDidMoveToDeparture;
+
 - (void)viewDidMoveToArrival;
+
+- (void)dataLoadedSuccessfully;
+
+- (void)viewDidMoveToTickets;
 
 @end
 
@@ -31,10 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainMenuPresenter : NSObject <MainMenuViewOutput, MainMenuDelegate>
 
+@property (strong, nonatomic) NSObject<MainMenuInteractorInput> *interactor;
 @property (strong, nonatomic) NSObject<MainMenuRouterInput> *router;
 @property (weak, nonatomic) UIViewController<MainMenuViewInput> *viewInput;
 
-- (instancetype)initWithRouter:(NSObject<MainMenuRouterInput>*)router;
+- (instancetype)initWithRouter:(NSObject<MainMenuRouterInput>*)router withInteractor:(NSObject<MainMenuInteractorInput>*)interactor;
 
 @end
 

@@ -9,10 +9,11 @@
 
 @implementation MainMenuPresenter
 
-- (instancetype)initWithRouter:(NSObject<MainMenuRouterInput>*)router  {
+- (instancetype)initWithRouter:(NSObject<MainMenuRouterInput>*)router withInteractor:(NSObject<MainMenuInteractorInput> *)interactor {
     self = [super init];
     if (self) {
         self.router = router;
+        self.interactor = interactor;
     }
     return self;
 }
@@ -54,7 +55,22 @@
     self.viewInput.searchRequest = __searchRequest;
     
     [button setTitle:title forState:UIControlStateNormal];
-    
+}
+
+- (void)viewDidMoveToTickets {
+    [self.interactor loadTicketsWithRequest:self.viewInput.searchRequest WithCompletion:^(NSArray * _Nonnull tickets) {
+        if (tickets.count > 0) {
+            [self.router moveToTicketsVCWithTickets: tickets];
+        } else {
+            [self.router showAlertWithTitle:@"Увы!" withMessage:@"По данному направлению билетов не найдено"];
+        }
+    }];
+}
+
+- (void)dataLoadedSuccessfully {
+    [self.interactor dataLoadedSuccessfullyWithCompletion:^(City * _Nonnull city) {
+        [self setPlace:city withDataType:DataSourceTypeCity andPlaceType:PlaceTypeDeparture forButton:self.viewInput.mainMenuView.departureButton];
+    }];
 }
 
 @end

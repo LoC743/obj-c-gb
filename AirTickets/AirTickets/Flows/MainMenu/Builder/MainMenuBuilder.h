@@ -10,6 +10,7 @@
 #import "MainMenuPresenter.h"
 #import "MainMenuRouter.h"
 #import "MainMenuViewController.h"
+#import "MainMenuInteractor.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

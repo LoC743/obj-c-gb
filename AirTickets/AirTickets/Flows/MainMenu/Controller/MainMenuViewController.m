@@ -43,8 +43,11 @@
     self.navigationController.navigationBar.layer.cornerRadius = 15.0;
     self.title = @"Поиск";
     
-    [[self mainMenuView].departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [[self mainMenuView].arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainMenuView.searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
 }
 
 - (void)placeButtonDidTap:(UIButton *)sender {
@@ -53,6 +56,19 @@
     } else {
         [self.presenter viewDidMoveToArrival];
     }
+}
+
+- (void)searchButtonDidTap:(UIButton *)sender {
+    [self.presenter viewDidMoveToTickets];
+}
+
+- (void)dataLoadedSuccessfully {
+    [self.presenter dataLoadedSuccessfully];
+}
+
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kDataManagerLoadDataDidComplete object:nil];
 }
 
 
