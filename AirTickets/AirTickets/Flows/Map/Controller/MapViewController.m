@@ -56,4 +56,22 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
++ (NSString *)annotationReuseIdentifier {
+    return @"MarkerIdentifier";
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:MapViewController.annotationReuseIdentifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:MapViewController.annotationReuseIdentifier];
+        annotationView.canShowCallout = YES;
+        annotationView.calloutOffset = CGPointMake(-5.0, 5.0);
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    }
+    
+    annotationView.annotation = annotation;
+    return annotationView;
+}
+
 @end
