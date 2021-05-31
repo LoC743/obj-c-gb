@@ -11,6 +11,21 @@
 		8A3AEB0E2653C3FC0048FD26 /* MainMenuPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB0D2653C3FC0048FD26 /* MainMenuPresenter.m */; };
 		8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB102653C40F0048FD26 /* MainMenuView.m */; };
 		8A3AEB152653C9BF0048FD26 /* MainMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB142653C9BF0048FD26 /* MainMenuBuilder.m */; };
+		8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85005F265D373400CEA1D1 /* MapBuilder.m */; };
+		8A850063265D374500CEA1D1 /* MapRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850062265D374500CEA1D1 /* MapRouter.m */; };
+		8A850066265D375100CEA1D1 /* MapInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850065265D375100CEA1D1 /* MapInteractor.m */; };
+		8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850068265D376100CEA1D1 /* MapPresenter.m */; };
+		8A85006F265D377F00CEA1D1 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85006E265D377F00CEA1D1 /* MapView.m */; };
+		8A850072265D379600CEA1D1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850071265D379600CEA1D1 /* MapViewController.m */; };
+		8A850076265D400300CEA1D1 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850075265D400300CEA1D1 /* LocationService.m */; };
+		8A85007A265D47DA00CEA1D1 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850079265D47DA00CEA1D1 /* APIManager.m */; };
+		8A85007E265D483E00CEA1D1 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85007D265D483E00CEA1D1 /* Ticket.m */; };
+		8A850082265D489200CEA1D1 /* MapPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850081265D489200CEA1D1 /* MapPrice.m */; };
+		8A850086265D5C1200CEA1D1 /* MainMenuInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850085265D5C1200CEA1D1 /* MainMenuInteractor.m */; };
+		8A85008E265D64EB00CEA1D1 /* TicketsBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85008D265D64EB00CEA1D1 /* TicketsBuilder.m */; };
+		8A850091265D64F900CEA1D1 /* TicketsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850090265D64F900CEA1D1 /* TicketsPresenter.m */; };
+		8A850094265D650E00CEA1D1 /* TicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850093265D650E00CEA1D1 /* TicketsTableViewController.m */; };
+		8A85009B265D695B00CEA1D1 /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85009A265D695B00CEA1D1 /* TicketTableViewCell.m */; };
 		8A912D0B2653E2BB00AE4B76 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D0A2653E2BB00AE4B76 /* PlaceViewController.m */; };
 		8A912D0E2653E2C800AE4B76 /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D0D2653E2C800AE4B76 /* PlaceView.m */; };
 		8A912D112653E2D900AE4B76 /* PlacePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D102653E2D900AE4B76 /* PlacePresenter.m */; };
@@ -40,6 +55,36 @@
 		8A3AEB102653C40F0048FD26 /* MainMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
 		8A3AEB132653C9BF0048FD26 /* MainMenuBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuBuilder.h; sourceTree = "<group>"; };
 		8A3AEB142653C9BF0048FD26 /* MainMenuBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuBuilder.m; sourceTree = "<group>"; };
+		8A85005E265D373400CEA1D1 /* MapBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapBuilder.h; sourceTree = "<group>"; };
+		8A85005F265D373400CEA1D1 /* MapBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapBuilder.m; sourceTree = "<group>"; };
+		8A850061265D374500CEA1D1 /* MapRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapRouter.h; sourceTree = "<group>"; };
+		8A850062265D374500CEA1D1 /* MapRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapRouter.m; sourceTree = "<group>"; };
+		8A850064265D375100CEA1D1 /* MapInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapInteractor.h; sourceTree = "<group>"; };
+		8A850065265D375100CEA1D1 /* MapInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapInteractor.m; sourceTree = "<group>"; };
+		8A850067265D376100CEA1D1 /* MapPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPresenter.h; sourceTree = "<group>"; };
+		8A850068265D376100CEA1D1 /* MapPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPresenter.m; sourceTree = "<group>"; };
+		8A85006D265D377F00CEA1D1 /* MapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		8A85006E265D377F00CEA1D1 /* MapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		8A850070265D379600CEA1D1 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		8A850071265D379600CEA1D1 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		8A850074265D400300CEA1D1 /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		8A850075265D400300CEA1D1 /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		8A850078265D47DA00CEA1D1 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		8A850079265D47DA00CEA1D1 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		8A85007C265D483E00CEA1D1 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
+		8A85007D265D483E00CEA1D1 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		8A850080265D489200CEA1D1 /* MapPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPrice.h; sourceTree = "<group>"; };
+		8A850081265D489200CEA1D1 /* MapPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPrice.m; sourceTree = "<group>"; };
+		8A850084265D5C1200CEA1D1 /* MainMenuInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuInteractor.h; sourceTree = "<group>"; };
+		8A850085265D5C1200CEA1D1 /* MainMenuInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuInteractor.m; sourceTree = "<group>"; };
+		8A85008C265D64EB00CEA1D1 /* TicketsBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsBuilder.h; sourceTree = "<group>"; };
+		8A85008D265D64EB00CEA1D1 /* TicketsBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsBuilder.m; sourceTree = "<group>"; };
+		8A85008F265D64F900CEA1D1 /* TicketsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsPresenter.h; sourceTree = "<group>"; };
+		8A850090265D64F900CEA1D1 /* TicketsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsPresenter.m; sourceTree = "<group>"; };
+		8A850092265D650E00CEA1D1 /* TicketsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsTableViewController.h; sourceTree = "<group>"; };
+		8A850093265D650E00CEA1D1 /* TicketsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsTableViewController.m; sourceTree = "<group>"; };
+		8A850099265D695B00CEA1D1 /* TicketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketTableViewCell.h; sourceTree = "<group>"; };
+		8A85009A265D695B00CEA1D1 /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
 		8A912D032653D09100AE4B76 /* Colors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		8A912D092653E2BB00AE4B76 /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		8A912D0A2653E2BB00AE4B76 /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
@@ -112,6 +157,173 @@
 				8AD89784264EA3A600FDAC52 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8A850056265D36D200CEA1D1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8A85005D265D370C00CEA1D1 /* Builder */,
+				8A85005C265D370800CEA1D1 /* Router */,
+				8A85005B265D370000CEA1D1 /* Interactor */,
+				8A85005A265D36F900CEA1D1 /* Presenter */,
+				8A850059265D36F100CEA1D1 /* Controller */,
+				8A850058265D36E900CEA1D1 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		8A850058265D36E900CEA1D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A85006D265D377F00CEA1D1 /* MapView.h */,
+				8A85006E265D377F00CEA1D1 /* MapView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A850059265D36F100CEA1D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A850070265D379600CEA1D1 /* MapViewController.h */,
+				8A850071265D379600CEA1D1 /* MapViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A85005A265D36F900CEA1D1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8A850067265D376100CEA1D1 /* MapPresenter.h */,
+				8A850068265D376100CEA1D1 /* MapPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8A85005B265D370000CEA1D1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8A850064265D375100CEA1D1 /* MapInteractor.h */,
+				8A850065265D375100CEA1D1 /* MapInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8A85005C265D370800CEA1D1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8A850061265D374500CEA1D1 /* MapRouter.h */,
+				8A850062265D374500CEA1D1 /* MapRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8A85005D265D370C00CEA1D1 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8A85005E265D373400CEA1D1 /* MapBuilder.h */,
+				8A85005F265D373400CEA1D1 /* MapBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		8A850073265D3FEC00CEA1D1 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				8A850074265D400300CEA1D1 /* LocationService.h */,
+				8A850075265D400300CEA1D1 /* LocationService.m */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
+		8A850077265D47C300CEA1D1 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				8A850078265D47DA00CEA1D1 /* APIManager.h */,
+				8A850079265D47DA00CEA1D1 /* APIManager.m */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		8A85007B265D483200CEA1D1 /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				8A85007C265D483E00CEA1D1 /* Ticket.h */,
+				8A85007D265D483E00CEA1D1 /* Ticket.m */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		8A85007F265D488300CEA1D1 /* MapPrice */ = {
+			isa = PBXGroup;
+			children = (
+				8A850080265D489200CEA1D1 /* MapPrice.h */,
+				8A850081265D489200CEA1D1 /* MapPrice.m */,
+			);
+			path = MapPrice;
+			sourceTree = "<group>";
+		};
+		8A850083265D5BF700CEA1D1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8A850084265D5C1200CEA1D1 /* MainMenuInteractor.h */,
+				8A850085265D5C1200CEA1D1 /* MainMenuInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8A850087265D648200CEA1D1 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				8A85008B265D64D000CEA1D1 /* Builder */,
+				8A85008A265D64CA00CEA1D1 /* Presenter */,
+				8A850089265D64C200CEA1D1 /* Controller */,
+				8A850088265D649600CEA1D1 /* VIew */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
+		8A850088265D649600CEA1D1 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				8A850098265D694000CEA1D1 /* TicketTableViewCell */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		8A850089265D64C200CEA1D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A850092265D650E00CEA1D1 /* TicketsTableViewController.h */,
+				8A850093265D650E00CEA1D1 /* TicketsTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A85008A265D64CA00CEA1D1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8A85008F265D64F900CEA1D1 /* TicketsPresenter.h */,
+				8A850090265D64F900CEA1D1 /* TicketsPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8A85008B265D64D000CEA1D1 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				8A85008C265D64EB00CEA1D1 /* TicketsBuilder.h */,
+				8A85008D265D64EB00CEA1D1 /* TicketsBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		8A850098265D694000CEA1D1 /* TicketTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8A850099265D695B00CEA1D1 /* TicketTableViewCell.h */,
+				8A85009A265D695B00CEA1D1 /* TicketTableViewCell.m */,
+			);
+			path = TicketTableViewCell;
 			sourceTree = "<group>";
 		};
 		8A912D022653D08800AE4B76 /* Colors */ = {
@@ -243,6 +455,8 @@
 		8AD897A5264EA94800FDAC52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A85007F265D488300CEA1D1 /* MapPrice */,
+				8A85007B265D483200CEA1D1 /* Ticket */,
 				8AD897AE264EAA2500FDAC52 /* Airport */,
 				8AD897AA264EA9CD00FDAC52 /* City */,
 				8AD897A6264EA95600FDAC52 /* Country */,
@@ -280,6 +494,8 @@
 		8AD897B2264EAA9800FDAC52 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8A850077265D47C300CEA1D1 /* APIManager */,
+				8A850073265D3FEC00CEA1D1 /* LocationService */,
 				8AD897B6264EAAB500FDAC52 /* DataManager */,
 			);
 			path = Service;
@@ -297,6 +513,8 @@
 		8AFC8A7D2653C23C0081577E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8A850087265D648200CEA1D1 /* Tickets */,
+				8A850056265D36D200CEA1D1 /* Map */,
 				8A912D042653E25100AE4B76 /* Place */,
 				8AFC8A7E2653C2450081577E /* MainMenu */,
 			);
@@ -306,6 +524,7 @@
 		8AFC8A7E2653C2450081577E /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				8A850083265D5BF700CEA1D1 /* Interactor */,
 				8A3AEB122653C9A90048FD26 /* Builder */,
 				8AFC8A832653C2DE0081577E /* Router */,
 				8AFC8A822653C2D10081577E /* Controller */,
@@ -424,21 +643,36 @@
 			files = (
 				8A912D0B2653E2BB00AE4B76 /* PlaceViewController.m in Sources */,
 				8AD897AD264EA9D600FDAC52 /* City.m in Sources */,
+				8A850091265D64F900CEA1D1 /* TicketsPresenter.m in Sources */,
 				8A3AEB0E2653C3FC0048FD26 /* MainMenuPresenter.m in Sources */,
 				8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */,
+				8A850063265D374500CEA1D1 /* MapRouter.m in Sources */,
+				8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */,
 				8AD897A9264EA97D00FDAC52 /* Country.m in Sources */,
 				8A912D182653E31400AE4B76 /* PlaceBuilder.m in Sources */,
 				8AD897B5264EAAAE00FDAC52 /* DataManager.m in Sources */,
 				8A912D112653E2D900AE4B76 /* PlacePresenter.m in Sources */,
 				8AD897B1264EAA3200FDAC52 /* Airport.m in Sources */,
+				8A850094265D650E00CEA1D1 /* TicketsTableViewController.m in Sources */,
 				8AD89785264EA3A600FDAC52 /* AppDelegate.m in Sources */,
+				8A850086265D5C1200CEA1D1 /* MainMenuInteractor.m in Sources */,
+				8A85009B265D695B00CEA1D1 /* TicketTableViewCell.m in Sources */,
+				8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */,
+				8A850072265D379600CEA1D1 /* MapViewController.m in Sources */,
+				8A85007A265D47DA00CEA1D1 /* APIManager.m in Sources */,
 				8A912D142653E2E800AE4B76 /* PlaceInteractor.m in Sources */,
 				8AD89796264EA3A600FDAC52 /* main.m in Sources */,
 				8A3AEB082653C3580048FD26 /* MainMenuRouter.m in Sources */,
+				8A85006F265D377F00CEA1D1 /* MapView.m in Sources */,
+				8A85007E265D483E00CEA1D1 /* Ticket.m in Sources */,
 				8A912D0E2653E2C800AE4B76 /* PlaceView.m in Sources */,
+				8A850082265D489200CEA1D1 /* MapPrice.m in Sources */,
 				8AFC8A862653C30C0081577E /* MainMenuViewController.m in Sources */,
+				8A85008E265D64EB00CEA1D1 /* TicketsBuilder.m in Sources */,
 				8A3AEB152653C9BF0048FD26 /* MainMenuBuilder.m in Sources */,
 				8A912D1C2653F2D900AE4B76 /* PlaceRouter.m in Sources */,
+				8A850076265D400300CEA1D1 /* LocationService.m in Sources */,
+				8A850066265D375100CEA1D1 /* MapInteractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +808,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9LK5ZZR926;
 				INFOPLIST_FILE = AirTickets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,6 +826,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9LK5ZZR926;
 				INFOPLIST_FILE = AirTickets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

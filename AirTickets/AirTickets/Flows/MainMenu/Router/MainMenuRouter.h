@@ -22,7 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MainMenuRouterInput <NSObject>
 
 - (void)moveToDepartureWithMenuDelegate:(NSObject<MainMenuDelegate>*)delegate;
+
 - (void)moveToArrivalWithMenuDelegate:(NSObject<MainMenuDelegate>*)delegate;
+
+- (void)moveToTicketsVCWithTickets:(NSArray *)tickets;
+
+- (void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message;
 
 @end
 

@@ -11,6 +11,7 @@
 #define buttonCornerRadius 15.0
 #define buttonWidth [UIScreen mainScreen].bounds.size.width - 60.0
 #define buttonHeight 60.0
+#define buttonsOffset 20.0
 
 @implementation MainMenuView
 
@@ -27,8 +28,9 @@
     
     self.arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.searchButton = [UIButton buttonWithType:UIButtonTypeSystem];
     
-    NSArray *buttons = [[NSArray alloc] initWithObjects:self.arrivalButton, self.departureButton, nil];
+    NSArray *buttons = [[NSArray alloc] initWithObjects:self.arrivalButton, self.departureButton, self.searchButton, nil];
     for (UIButton *button in buttons) {
         button.tintColor = UIColor.whiteColor;
         button.backgroundColor = UIColorFromRGB(darkColor);
@@ -44,11 +46,15 @@
     self.departureButton.frame = CGRectMake(30.0, topbarHeight + topPadding + 15.0 + buttonHeight, buttonWidth, buttonHeight);
     
     [self.arrivalButton setTitle:@"Куда" forState: UIControlStateNormal];
-    self.arrivalButton.frame = CGRectMake(30.0, CGRectGetMaxY(self.departureButton.frame) + 20.0, buttonWidth, buttonHeight);
+    self.arrivalButton.frame = CGRectMake(30.0, CGRectGetMaxY(self.departureButton.frame) + buttonsOffset, buttonWidth, buttonHeight);
     
+    [self.searchButton setTitle:@"Найти" forState: UIControlStateNormal];
+    self.searchButton.backgroundColor = UIColor.darkGrayColor;
+    self.searchButton.frame = CGRectMake(30.0, CGRectGetMaxY(self.arrivalButton.frame) + 2*buttonsOffset, buttonWidth, buttonHeight);
     
     [self addSubview:self.departureButton];
     [self addSubview:self.arrivalButton];
+    [self addSubview:self.searchButton];
     
 }
 
