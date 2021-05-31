@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface PlaceViewController : UIViewController<PlaceViewInput, UITableViewDelegate, UITableViewDataSource>
+@interface PlaceViewController : UIViewController<PlaceViewInput, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (strong, nonatomic) NSObject<PlaceViewOutput> *presenter;
 

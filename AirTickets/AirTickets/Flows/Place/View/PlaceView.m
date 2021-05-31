@@ -22,13 +22,19 @@
     self.backgroundColor = UIColor.whiteColor;
     
     [self configureTableView];
+    [self configureSearchBar];
     [self configureSegmanetedControl];
 }
 
-- (void) configureTableView {
+- (void)configureTableView {
     CGRect frame = UIScreen.mainScreen.bounds;
     self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [self addSubview: self.tableView];
+}
+
+- (void)configureSearchBar {
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 70, 310, 44)];
+    self.tableView.tableHeaderView = self.searchBar;
 }
 
 - (void)configureSegmanetedControl {
