@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIViewController<TicketsViewInput>*)buildWithTickets:(NSArray *)tickets;
 
++ (UIViewController<TicketsViewInput>*)buildFavoutives;
+
 @end
 
 NS_ASSUME_NONNULL_END

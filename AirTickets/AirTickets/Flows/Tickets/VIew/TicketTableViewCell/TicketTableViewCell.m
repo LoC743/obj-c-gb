@@ -75,4 +75,15 @@
     self.dateLabel.text = [dateFormatter stringFromDate:ticket.departure];
 }
 
+- (void)setFavouriteTicket:(FavouriteTicket *)favouriteTicket {
+    _favouriteTicket = favouriteTicket;
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favouriteTicket.price];
+    self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favouriteTicket.from, favouriteTicket.to];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    self.dateLabel.text = [dateFormatter stringFromDate:favouriteTicket.departure];
+}
+
 @end

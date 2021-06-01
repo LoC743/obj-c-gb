@@ -43,6 +43,12 @@
 		8AD897AD264EA9D600FDAC52 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD897AC264EA9D600FDAC52 /* City.m */; };
 		8AD897B1264EAA3200FDAC52 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD897B0264EAA3200FDAC52 /* Airport.m */; };
 		8AD897B5264EAAAE00FDAC52 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD897B4264EAAAE00FDAC52 /* DataManager.m */; };
+		8AEBC3F126663EAD008CDABF /* CoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC3F026663EAD008CDABF /* CoreDataStorage.m */; };
+		8AEBC3FF266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC3FD266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift */; };
+		8AEBC400266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC3FE266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift */; };
+		8AEBC40126664459008CDABF /* Ticket.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 8AEBC3EB26663D78008CDABF /* Ticket.xcdatamodeld */; };
+		8AEBC4062666470B008CDABF /* TicketsRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC4052666470B008CDABF /* TicketsRouter.m */; };
+		8AEBC40926664718008CDABF /* TicketsInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AEBC40826664718008CDABF /* TicketsInteractor.m */; };
 		8AFC8A862653C30C0081577E /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFC8A852653C30C0081577E /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +123,16 @@
 		8AD897B0264EAA3200FDAC52 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
 		8AD897B3264EAAAE00FDAC52 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		8AD897B4264EAAAE00FDAC52 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		8AEBC3EC26663D78008CDABF /* Ticket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ticket.xcdatamodel; sourceTree = "<group>"; };
+		8AEBC3EF26663EAD008CDABF /* CoreDataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStorage.h; sourceTree = "<group>"; };
+		8AEBC3F026663EAD008CDABF /* CoreDataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataStorage.m; sourceTree = "<group>"; };
+		8AEBC3F3266640F4008CDABF /* AirTickets-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirTickets-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AEBC3FD266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteTicket+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AEBC3FE266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteTicket+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AEBC4042666470B008CDABF /* TicketsRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsRouter.h; sourceTree = "<group>"; };
+		8AEBC4052666470B008CDABF /* TicketsRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsRouter.m; sourceTree = "<group>"; };
+		8AEBC40726664718008CDABF /* TicketsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsInteractor.h; sourceTree = "<group>"; };
+		8AEBC40826664718008CDABF /* TicketsInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsInteractor.m; sourceTree = "<group>"; };
 		8AFC8A842653C30C0081577E /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		8AFC8A852653C30C0081577E /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,6 +290,8 @@
 		8A850087265D648200CEA1D1 /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
+				8AEBC403266646F2008CDABF /* Router */,
+				8AEBC402266646EA008CDABF /* Interactor */,
 				8A85008B265D64D000CEA1D1 /* Builder */,
 				8A85008A265D64CA00CEA1D1 /* Presenter */,
 				8A850089265D64C200CEA1D1 /* Controller */,
@@ -407,6 +425,7 @@
 			children = (
 				8AD89782264EA3A600FDAC52 /* AirTickets */,
 				8AD89781264EA3A600FDAC52 /* Products */,
+				8AEBC3F3266640F4008CDABF /* AirTickets-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,6 +474,7 @@
 		8AD897A5264EA94800FDAC52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8AEBC3F826664117008CDABF /* FavouriteTicket */,
 				8A85007F265D488300CEA1D1 /* MapPrice */,
 				8A85007B265D483200CEA1D1 /* Ticket */,
 				8AD897AE264EAA2500FDAC52 /* Airport */,
@@ -494,6 +514,7 @@
 		8AD897B2264EAA9800FDAC52 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8AEBC3EA26663D55008CDABF /* CoreDataStorage */,
 				8A850077265D47C300CEA1D1 /* APIManager */,
 				8A850073265D3FEC00CEA1D1 /* LocationService */,
 				8AD897B6264EAAB500FDAC52 /* DataManager */,
@@ -508,6 +529,51 @@
 				8AD897B4264EAAAE00FDAC52 /* DataManager.m */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8AEBC3EA26663D55008CDABF /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				8AEBC3EB26663D78008CDABF /* Ticket.xcdatamodeld */,
+				8AEBC3EE26663E8B008CDABF /* Storage */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		8AEBC3EE26663E8B008CDABF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8AEBC3EF26663EAD008CDABF /* CoreDataStorage.h */,
+				8AEBC3F026663EAD008CDABF /* CoreDataStorage.m */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		8AEBC3F826664117008CDABF /* FavouriteTicket */ = {
+			isa = PBXGroup;
+			children = (
+				8AEBC3FD266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift */,
+				8AEBC3FE266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift */,
+			);
+			path = FavouriteTicket;
+			sourceTree = "<group>";
+		};
+		8AEBC402266646EA008CDABF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8AEBC40726664718008CDABF /* TicketsInteractor.h */,
+				8AEBC40826664718008CDABF /* TicketsInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		8AEBC403266646F2008CDABF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8AEBC4042666470B008CDABF /* TicketsRouter.h */,
+				8AEBC4052666470B008CDABF /* TicketsRouter.m */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		8AFC8A7D2653C23C0081577E /* Flows */ = {
@@ -600,6 +666,7 @@
 				TargetAttributes = {
 					8AD8977F264EA3A600FDAC52 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -626,6 +693,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEBC40126664459008CDABF /* Ticket.xcdatamodeld in Resources */,
 				8AD897A3264EA8B600FDAC52 /* cities.json in Resources */,
 				8AD897A2264EA8B600FDAC52 /* countries.json in Resources */,
 				8AD89793264EA3A600FDAC52 /* LaunchScreen.storyboard in Resources */,
@@ -642,10 +710,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A912D0B2653E2BB00AE4B76 /* PlaceViewController.m in Sources */,
+				8AEBC3F126663EAD008CDABF /* CoreDataStorage.m in Sources */,
 				8AD897AD264EA9D600FDAC52 /* City.m in Sources */,
 				8A850091265D64F900CEA1D1 /* TicketsPresenter.m in Sources */,
 				8A3AEB0E2653C3FC0048FD26 /* MainMenuPresenter.m in Sources */,
+				8AEBC40926664718008CDABF /* TicketsInteractor.m in Sources */,
 				8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */,
+				8AEBC400266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift in Sources */,
 				8A850063265D374500CEA1D1 /* MapRouter.m in Sources */,
 				8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */,
 				8AD897A9264EA97D00FDAC52 /* Country.m in Sources */,
@@ -656,10 +727,12 @@
 				8A850094265D650E00CEA1D1 /* TicketsTableViewController.m in Sources */,
 				8AD89785264EA3A600FDAC52 /* AppDelegate.m in Sources */,
 				8A850086265D5C1200CEA1D1 /* MainMenuInteractor.m in Sources */,
+				8AEBC3FF266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift in Sources */,
 				8A85009B265D695B00CEA1D1 /* TicketTableViewCell.m in Sources */,
 				8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */,
 				8A850072265D379600CEA1D1 /* MapViewController.m in Sources */,
 				8A85007A265D47DA00CEA1D1 /* APIManager.m in Sources */,
+				8AEBC4062666470B008CDABF /* TicketsRouter.m in Sources */,
 				8A912D142653E2E800AE4B76 /* PlaceInteractor.m in Sources */,
 				8AD89796264EA3A600FDAC52 /* main.m in Sources */,
 				8A3AEB082653C3580048FD26 /* MainMenuRouter.m in Sources */,
@@ -807,6 +880,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LK5ZZR926;
 				INFOPLIST_FILE = AirTickets/Info.plist;
@@ -816,6 +890,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.morozovalexey.AirTickets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirTickets-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -825,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LK5ZZR926;
 				INFOPLIST_FILE = AirTickets/Info.plist;
@@ -834,6 +912,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.morozovalexey.AirTickets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AirTickets-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -860,6 +940,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8AEBC3EB26663D78008CDABF /* Ticket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8AEBC3EC26663D78008CDABF /* Ticket.xcdatamodel */,
+			);
+			currentVersion = 8AEBC3EC26663D78008CDABF /* Ticket.xcdatamodel */;
+			path = Ticket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8AD89778264EA3A600FDAC52 /* Project object */;
 }
