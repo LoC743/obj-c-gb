@@ -7,8 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AirTickets-Swift.h"
+#import "SimpleMapPrice.h"
 #import "DataManager.h"
 #import "Ticket.h"
+#import "MapPrice.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addToFavourite:(Ticket *)ticket;
 
 - (void)removeFromFavourite:(Ticket *)ticket;
+
+- (BOOL)isFavouriteMapPrice:(SimpleMapPrice *)ticket;
+
+- (NSArray *)favouritesMapPrice;
+
+- (void)addToFavouriteMapPrice:(SimpleMapPrice *)ticket;
+
+- (void)removeFromFavouriteMapPrice:(SimpleMapPrice *)ticket;
 
 @end
 

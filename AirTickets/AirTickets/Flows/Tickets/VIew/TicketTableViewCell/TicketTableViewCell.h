@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) Ticket *ticket;
 @property (nonatomic, strong) FavouriteTicket *favouriteTicket;
+@property (nonatomic, strong) FavouriteMapPrice *favouriteMapPrice;
 
 @end
 

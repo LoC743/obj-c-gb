@@ -40,5 +40,9 @@
     return [CoreDataStorage.sharedInstance favourites];
 }
 
+- (nonnull NSArray *)getFavouritesMapPrice {
+    return [CoreDataStorage.sharedInstance favouritesMapPrice];
+}
+
 
 @end

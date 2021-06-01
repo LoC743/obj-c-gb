@@ -6,7 +6,6 @@
 //
 
 #import "CoreDataStorage.h"
-#import "AirTickets-Swift.h"
 
 @interface CoreDataStorage ()
 
@@ -92,5 +91,40 @@
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
     return [self.managedObjectContext executeFetchRequest:request error:nil];
 }
+
+- (FavouriteMapPrice *)favouriteFromMapPrice:(SimpleMapPrice *)price {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavouriteMapPrice"];
+    request.predicate = [NSPredicate predicateWithFormat:@"price == %@ AND destination == %@", price.price, price.destination];
+    return [[self.managedObjectContext executeFetchRequest:request error:nil] firstObject];
+}
+
+- (BOOL)isFavouriteMapPrice:(SimpleMapPrice *)ticket {
+    return [self favouriteFromMapPrice:ticket] != nil;
+}
+
+
+- (void)addToFavouriteMapPrice:(SimpleMapPrice *)price {
+    FavouriteMapPrice *favorite = [NSEntityDescription insertNewObjectForEntityForName:@"FavouriteMapPrice" inManagedObjectContext:self.managedObjectContext];
+    favorite.price = price.price;
+    favorite.destination = price.destination;
+    favorite.created = [NSDate new];
+      
+    [self save];
+}
+
+- (void)removeFromFavouriteMapPrice:(SimpleMapPrice *)price {
+    FavouriteMapPrice *favorite = [self favouriteFromMapPrice:price];
+    if (favorite) {
+        [self.managedObjectContext deleteObject:favorite];
+        [self save];
+    }
+}
+
+- (NSArray *)favouritesMapPrice {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavouriteMapPrice"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+}
+
 
 @end

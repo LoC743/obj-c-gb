@@ -32,6 +32,9 @@
 		8A912D142653E2E800AE4B76 /* PlaceInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D132653E2E800AE4B76 /* PlaceInteractor.m */; };
 		8A912D182653E31400AE4B76 /* PlaceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D172653E31400AE4B76 /* PlaceBuilder.m */; };
 		8A912D1C2653F2D900AE4B76 /* PlaceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A912D1B2653F2D900AE4B76 /* PlaceRouter.m */; };
+		8A9D145E2666696700CA3562 /* FavouriteMapPrice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D145C2666679100CA3562 /* FavouriteMapPrice+CoreDataClass.swift */; };
+		8A9D145F2666696B00CA3562 /* FavouriteMapPrice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D145D2666679100CA3562 /* FavouriteMapPrice+CoreDataProperties.swift */; };
+		8A9D146526666E8400CA3562 /* SimpleMapPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9D146426666E8400CA3562 /* SimpleMapPrice.m */; };
 		8AD89785264EA3A600FDAC52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD89784264EA3A600FDAC52 /* AppDelegate.m */; };
 		8AD89790264EA3A600FDAC52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD8978F264EA3A600FDAC52 /* Assets.xcassets */; };
 		8AD89793264EA3A600FDAC52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD89791264EA3A600FDAC52 /* LaunchScreen.storyboard */; };
@@ -105,6 +108,10 @@
 		8A912D1A2653F2D900AE4B76 /* PlaceRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceRouter.h; sourceTree = "<group>"; };
 		8A912D1B2653F2D900AE4B76 /* PlaceRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceRouter.m; sourceTree = "<group>"; };
 		8A912D1D2654058300AE4B76 /* PlaceType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceType.h; sourceTree = "<group>"; };
+		8A9D145C2666679100CA3562 /* FavouriteMapPrice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteMapPrice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8A9D145D2666679100CA3562 /* FavouriteMapPrice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteMapPrice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8A9D146326666E8400CA3562 /* SimpleMapPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleMapPrice.h; sourceTree = "<group>"; };
+		8A9D146426666E8400CA3562 /* SimpleMapPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleMapPrice.m; sourceTree = "<group>"; };
 		8AD89780264EA3A600FDAC52 /* AirTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD89783264EA3A600FDAC52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AD89784264EA3A600FDAC52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -420,6 +427,25 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		8A9D145B2666677200CA3562 /* FavouriteMapPrice */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D146226666E7300CA3562 /* SimpleMapPrice */,
+				8A9D145C2666679100CA3562 /* FavouriteMapPrice+CoreDataClass.swift */,
+				8A9D145D2666679100CA3562 /* FavouriteMapPrice+CoreDataProperties.swift */,
+			);
+			path = FavouriteMapPrice;
+			sourceTree = "<group>";
+		};
+		8A9D146226666E7300CA3562 /* SimpleMapPrice */ = {
+			isa = PBXGroup;
+			children = (
+				8A9D146326666E8400CA3562 /* SimpleMapPrice.h */,
+				8A9D146426666E8400CA3562 /* SimpleMapPrice.m */,
+			);
+			path = SimpleMapPrice;
+			sourceTree = "<group>";
+		};
 		8AD89777264EA3A600FDAC52 = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +500,7 @@
 		8AD897A5264EA94800FDAC52 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8A9D145B2666677200CA3562 /* FavouriteMapPrice */,
 				8AEBC3F826664117008CDABF /* FavouriteTicket */,
 				8A85007F265D488300CEA1D1 /* MapPrice */,
 				8A85007B265D483200CEA1D1 /* Ticket */,
@@ -716,7 +743,6 @@
 				8A3AEB0E2653C3FC0048FD26 /* MainMenuPresenter.m in Sources */,
 				8AEBC40926664718008CDABF /* TicketsInteractor.m in Sources */,
 				8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */,
-				8AEBC400266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift in Sources */,
 				8A850063265D374500CEA1D1 /* MapRouter.m in Sources */,
 				8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */,
 				8AD897A9264EA97D00FDAC52 /* Country.m in Sources */,
@@ -727,10 +753,14 @@
 				8A850094265D650E00CEA1D1 /* TicketsTableViewController.m in Sources */,
 				8AD89785264EA3A600FDAC52 /* AppDelegate.m in Sources */,
 				8A850086265D5C1200CEA1D1 /* MainMenuInteractor.m in Sources */,
+				8AEBC400266641C9008CDABF /* FavouriteTicket+CoreDataProperties.swift in Sources */,
 				8AEBC3FF266641C9008CDABF /* FavouriteTicket+CoreDataClass.swift in Sources */,
+				8A9D145E2666696700CA3562 /* FavouriteMapPrice+CoreDataClass.swift in Sources */,
+				8A9D145F2666696B00CA3562 /* FavouriteMapPrice+CoreDataProperties.swift in Sources */,
 				8A85009B265D695B00CEA1D1 /* TicketTableViewCell.m in Sources */,
 				8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */,
 				8A850072265D379600CEA1D1 /* MapViewController.m in Sources */,
+				8A9D146526666E8400CA3562 /* SimpleMapPrice.m in Sources */,
 				8A85007A265D47DA00CEA1D1 /* APIManager.m in Sources */,
 				8AEBC4062666470B008CDABF /* TicketsRouter.m in Sources */,
 				8A912D142653E2E800AE4B76 /* PlaceInteractor.m in Sources */,

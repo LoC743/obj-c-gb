@@ -10,6 +10,8 @@
 
 @interface TicketsTableViewController ()
 
+@property (strong, nonatomic) UISegmentedControl *segmentedControl;
+
 @property BOOL isFavorites;
 
 @end
@@ -30,6 +32,14 @@
     
     self.isFavorites = YES;
     self.tickets = [NSArray new];
+    [self configureSegmanetedControl];
+}
+
+- (void)configureSegmanetedControl {
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Билеты", @"Карта"]];
+    self.segmentedControl.selectedSegmentIndex = 0;
+    [self.segmentedControl addTarget:self action:@selector(valueChanged:) forControlEvents: UIControlEventValueChanged];
+    self.navigationItem.titleView = self.segmentedControl;
 }
 
 - (void)viewDidLoad {
@@ -44,9 +54,18 @@
     
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     if (self.isFavorites) {
-        self.tickets = [self.presenter getFavourites];
+        [self valueChanged:self.segmentedControl];
         [self.tableView reloadData];
     }
+}
+
+- (void)valueChanged:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.tickets = [self.presenter getFavourites];
+    } else {
+        self.tickets = [self.presenter getFavouritesMapPrice];
+    }
+    [self.tableView reloadData];
 }
 
 
@@ -72,7 +91,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TicketTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TicketTableViewCell.reuseIdentifier forIndexPath:indexPath];
     if (self.isFavorites) {
-        cell.favouriteTicket = self.tickets[indexPath.row];
+        if (self.segmentedControl.selectedSegmentIndex == 0) {
+            cell.favouriteTicket = self.tickets[indexPath.row];
+        } else {
+            cell.favouriteMapPrice = self.tickets[indexPath.row];
+        }
     } else {
         cell.ticket = self.tickets[indexPath.row];
     }

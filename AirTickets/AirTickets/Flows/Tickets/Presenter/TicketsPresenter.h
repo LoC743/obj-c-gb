@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray *)getFavourites;
 
+- (NSArray *)getFavouritesMapPrice;
+
 @end
 
 @interface TicketsPresenter : NSObject <TicketsViewOutput>
