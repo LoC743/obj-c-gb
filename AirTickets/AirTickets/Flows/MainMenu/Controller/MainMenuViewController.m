@@ -10,6 +10,7 @@
 #import "Colors.h"
 #import "DataManager.h"
 #import "FirstStartViewController.h"
+#import "ProgressView.h"
 
 @interface MainMenuViewController ()
 
@@ -61,7 +62,8 @@
     BOOL isFirstStart = [[NSUserDefaults standardUserDefaults] boolForKey:@"first_start"];
     if (!isFirstStart) {
         FirstStartViewController *firstStartViewController = [[FirstStartViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-
+        firstStartViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        
         [self presentViewController:firstStartViewController animated:YES completion:nil];
     }
 }

@@ -14,6 +14,7 @@
 		8A4CAF9A266D021F00FF9350 /* FirstStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAF99266D021F00FF9350 /* FirstStartViewController.m */; };
 		8A4CAF9F266D02A400FF9350 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAF9E266D02A400FF9350 /* ContentViewController.m */; };
 		8A4CAFA3266D0AEC00FF9350 /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */; };
+		8A4CAFA7266D1D5C00FF9350 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */; };
 		8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85005F265D373400CEA1D1 /* MapBuilder.m */; };
 		8A850063265D374500CEA1D1 /* MapRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850062265D374500CEA1D1 /* MapRouter.m */; };
 		8A850066265D375100CEA1D1 /* MapInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850065265D375100CEA1D1 /* MapInteractor.m */; };
@@ -73,6 +74,8 @@
 		8A4CAF9E266D02A400FF9350 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		8A4CAFA1266D0AEC00FF9350 /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
 		8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
+		8A4CAFA5266D1D5C00FF9350 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		8A85005E265D373400CEA1D1 /* MapBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapBuilder.h; sourceTree = "<group>"; };
 		8A85005F265D373400CEA1D1 /* MapBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapBuilder.m; sourceTree = "<group>"; };
 		8A850061265D374500CEA1D1 /* MapRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapRouter.h; sourceTree = "<group>"; };
@@ -233,6 +236,15 @@
 				8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		8A4CAFA4266D1D4700FF9350 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAFA5266D1D5C00FF9350 /* ProgressView.h */,
+				8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		8A850056265D36D200CEA1D1 /* Map */ = {
@@ -685,6 +697,7 @@
 		8AFC8A7F2653C2BC0081577E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A4CAFA4266D1D4700FF9350 /* ProgressView */,
 				8A3AEB0F2653C40F0048FD26 /* MainMenuView.h */,
 				8A3AEB102653C40F0048FD26 /* MainMenuView.m */,
 			);
@@ -800,6 +813,7 @@
 				8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */,
 				8A850063265D374500CEA1D1 /* MapRouter.m in Sources */,
 				8A4CAF9F266D02A400FF9350 /* ContentViewController.m in Sources */,
+				8A4CAFA7266D1D5C00FF9350 /* ProgressView.m in Sources */,
 				8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */,
 				8AD897A9264EA97D00FDAC52 /* Country.m in Sources */,
 				8A912D182653E31400AE4B76 /* PlaceBuilder.m in Sources */,
