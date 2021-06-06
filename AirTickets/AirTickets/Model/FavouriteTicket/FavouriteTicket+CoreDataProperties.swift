@@ -20,9 +20,9 @@ extension FavouriteTicket {
     @NSManaged public var created: Date?
     @NSManaged public var departure: Date?
     @NSManaged public var expires: Date?
-    @NSManaged public var flightNumber: Int16
+    @NSManaged public var flightNumber: NSNumber
     @NSManaged public var from: String?
-    @NSManaged public var price: Int64
+    @NSManaged public var price: NSNumber
     @NSManaged public var returnDate: Date?
     @NSManaged public var to: String?
 

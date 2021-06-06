@@ -82,7 +82,6 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     if (self.isFavorites) {
         [self valueChanged:self.segmentedControl];
-        [self.tableView reloadData];
     }
 }
 
@@ -104,18 +103,33 @@
         [NotificationCenter.sharedInstance sendNotification:notification];
 
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Успешно" message:[NSString stringWithFormat:@"Уведомление будет отправлено - %@", _datePicker.date] preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+            [CoreDataStorage.sharedInstance addToFavourite:self.notificationCell.ticket];
+            self.datePicker.date = [NSDate date];
+            self.notificationCell = nil;
+            [self.view endEditing:YES];
+        }];
         [alertController addAction:cancelAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    self.datePicker.date = [NSDate date];
-    self.notificationCell = nil;
-    [self.view endEditing:YES];
 }
 
 - (void)cancelButtonDidTap:(UIBarButtonItem *)sender {
     self.notificationCell = nil;
     [self.view endEditing:YES];
+}
+
+- (void)removeTicket:(Ticket *)ticket withIndexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *tempTickets = [[NSMutableArray alloc] initWithArray:self.tickets];
+    [tempTickets removeObjectAtIndex:indexPath.row];
+    self.tickets = tempTickets;
+    
+    if (self.tickets.count != 0) {
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        [self.tableView reloadData];
+    }
+
 }
 
 
@@ -132,10 +146,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (self.isFavorites) { return; }
-    
     Ticket *ticket = self.tickets[indexPath.row];
+    
+    if (self.isFavorites) {
+        UIAlertAction *removeAction = [UIAlertAction actionWithTitle:@"Удалить" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self removeTicket:ticket withIndexPath:indexPath];
+            [CoreDataStorage.sharedInstance removeFromFavourite:ticket];
+        }];
+        
+        [self.presenter viewDidTapCellWithActions:@[removeAction]];
+        
+        return;
+    }
+    
     UIAlertAction *favouriteAction;
     if ([CoreDataStorage.sharedInstance isFavourite:ticket]) {
         favouriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {

@@ -6,6 +6,7 @@
 //
 
 #import "NotificationCenter.h"
+#import <UIKit/UIKit.h>
 
 @implementation NotificationCenter
 
@@ -68,6 +69,12 @@ Notification NotificationMake(NSString* _Nullable title, NSString* _Nonnull body
     notification.date = date;
     notification.imageURL = imageURL;
     return notification;
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    UITabBarController *tabBarController = (UITabBarController *)UIApplication.sharedApplication.delegate.window.rootViewController;
+    
+    [tabBarController setSelectedIndex:2];
 }
 
 @end

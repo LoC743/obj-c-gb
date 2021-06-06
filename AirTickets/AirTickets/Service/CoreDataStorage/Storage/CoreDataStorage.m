@@ -65,11 +65,11 @@
 
 - (void)addToFavourite:(Ticket *)ticket {
     FavouriteTicket *favorite = [NSEntityDescription insertNewObjectForEntityForName:@"FavouriteTicket" inManagedObjectContext:self.managedObjectContext];
-    favorite.price = ticket.price.intValue;
+    favorite.price = ticket.price;
     favorite.airline = ticket.airline;
     favorite.departure = ticket.departure;
     favorite.expires = ticket.expires;
-    favorite.flightNumber = ticket.flightNumber.intValue;
+    favorite.flightNumber = ticket.flightNumber;
     favorite.returnDate = ticket.returnDate;
     favorite.from = ticket.from;
     favorite.to = ticket.to;
@@ -81,7 +81,7 @@
 - (void)removeFromFavourite:(Ticket *)ticket {
     FavouriteTicket *favorite = [self favouriteFromTicket:ticket];
     if (favorite) {
-        [_managedObjectContext deleteObject:favorite];
+        [self.managedObjectContext deleteObject:favorite];
         [self save];
     }
 }

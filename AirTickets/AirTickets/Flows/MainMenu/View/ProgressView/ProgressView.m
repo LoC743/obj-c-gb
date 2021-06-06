@@ -66,7 +66,7 @@
     self.alpha = 0.0;
     isActive = YES;
     [self startAnimating:1];
-    [[[UIApplication sharedApplication] delegate].window addSubview:self];
+    [UIApplication.sharedApplication.delegate.window addSubview:self];
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1.0;
     } completion:^(BOOL finished) {
