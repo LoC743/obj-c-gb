@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithPresenter:(NSObject<TicketsViewOutput>*)presenter;
 
+- (void)setupFavouriteTickets;
+
 @end
 
 NS_ASSUME_NONNULL_END

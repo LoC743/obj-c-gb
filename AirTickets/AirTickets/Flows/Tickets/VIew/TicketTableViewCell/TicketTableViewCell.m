@@ -60,7 +60,7 @@
     self.contentView.frame = CGRectMake(10.0, 10.0, [UIScreen mainScreen].bounds.size.width - 20.0, self.frame.size.height - 20.0);
     self.priceLabel.frame = CGRectMake(10.0, 10.0, self.contentView.frame.size.width - 110.0, 40.0);
     self.airlineLogoView.frame = CGRectMake(CGRectGetMaxX(self.priceLabel.frame) + 10.0, 10.0, 80.0, 80.0);
-    self.placesLabel.frame = CGRectMake(10.0, CGRectGetMaxY(self.priceLabel.frame) + 16.0, 100.0, 20.0);
+    self.placesLabel.frame = CGRectMake(10.0, CGRectGetMaxY(self.priceLabel.frame) + 16.0, self.frame.size.width - 10.0, 20.0);
     self.dateLabel.frame = CGRectMake(10.0, CGRectGetMaxY(self.placesLabel.frame) + 8.0, self.contentView.frame.size.width - 20.0, 20.0);
 }
 
@@ -73,6 +73,24 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
     self.dateLabel.text = [dateFormatter stringFromDate:ticket.departure];
+}
+
+- (void)setFavouriteTicket:(FavouriteTicket *)favouriteTicket {
+    _favouriteTicket = favouriteTicket;
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favouriteTicket.price];
+    self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favouriteTicket.from, favouriteTicket.to];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    self.dateLabel.text = [dateFormatter stringFromDate:favouriteTicket.departure];
+}
+
+- (void)setFavouriteMapPrice:(FavouriteMapPrice *)favouriteMapPrice {
+    _favouriteMapPrice = favouriteMapPrice;
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", favouriteMapPrice.price];
+    self.placesLabel.text = [NSString stringWithFormat:@"%@", favouriteMapPrice.destination];
 }
 
 @end

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AirTickets-Swift.h"
 #import "Ticket.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)reuseIdentifier;
 
 @property (nonatomic, strong) Ticket *ticket;
+@property (nonatomic, strong) FavouriteTicket *favouriteTicket;
+@property (nonatomic, strong) FavouriteMapPrice *favouriteMapPrice;
 
 @end
 

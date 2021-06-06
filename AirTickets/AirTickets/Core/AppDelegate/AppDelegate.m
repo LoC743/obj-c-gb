@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "MainMenuBuilder.h"
+#import "TicketsBuilder.h"
 #import "MapBuilder.h"
 #import "Colors.h"
 
@@ -35,9 +36,14 @@
     tabBarController.tabBar.barTintColor = UIColorFromRGB(darkColor);
     tabBarController.tabBar.tintColor = UIColor.whiteColor;
     
-    NSMutableArray *tabItems = [[NSMutableArray alloc] initWithCapacity:2];
+    TicketsTableViewController *favoriteVC = (TicketsTableViewController *) [TicketsBuilder buildFavoutives];
+    favoriteVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Избранное" image:[UIImage systemImageNamed:@"star"] selectedImage:[UIImage systemImageNamed:@"star.fill"]];
+    UINavigationController *favouriteNavVC = [[UINavigationController alloc] initWithRootViewController:favoriteVC];
+    
+    NSMutableArray *tabItems = [[NSMutableArray alloc] initWithCapacity:3];
     [tabItems addObject:navController];
     [tabItems addObject:mapVC];
+    [tabItems addObject:favouriteNavVC];
     
     tabBarController.viewControllers = tabItems;
     

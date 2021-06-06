@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CoreDataStorage.h"
 #import "LocationService.h"
 #import "MapInteractor.h"
 #import "MapRouter.h"
