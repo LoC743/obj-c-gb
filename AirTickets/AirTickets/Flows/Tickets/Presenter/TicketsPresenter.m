@@ -20,20 +20,8 @@
     return self;
 }
 
-- (void)viewDidTapCellWithTicket:(Ticket *)ticket {
-    UIAlertAction *favouriteAction;
-    
-    if ([CoreDataStorage.sharedInstance isFavourite:ticket]) {
-        favouriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            [CoreDataStorage.sharedInstance removeFromFavourite:ticket];
-        }];
-    } else {
-        favouriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[CoreDataStorage sharedInstance] addToFavourite:ticket];
-        }];
-    }
-    
-    [self.router showAlertWithAction:favouriteAction];
+- (void)viewDidTapCellWithActions:(NSArray *)alertActions {
+    [self.router showAlertWithActions:alertActions];
 }
 
 - (nonnull NSArray *)getFavourites {

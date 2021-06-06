@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TicketsViewOutput <NSObject>
 
-- (void)viewDidTapCellWithTicket:(Ticket *)ticket;
+- (void)viewDidTapCellWithActions:(NSArray *)alertActions;
 
 - (NSArray *)getFavourites;
 
