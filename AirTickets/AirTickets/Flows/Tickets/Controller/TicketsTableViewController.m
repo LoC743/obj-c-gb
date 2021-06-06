@@ -176,4 +176,14 @@
     return 140.0;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.transform = CGAffineTransformMakeTranslation(self.tableView.bounds.size.width, 0);
+    cell.alpha = 0;
+    
+    [UIView animateWithDuration:0.95 delay:0.05 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        cell.transform = CGAffineTransformMakeTranslation(0, 0);
+        cell.alpha = 1;
+    } completion:nil];
+}
+
 @end
