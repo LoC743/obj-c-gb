@@ -11,6 +11,10 @@
 		8A3AEB0E2653C3FC0048FD26 /* MainMenuPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB0D2653C3FC0048FD26 /* MainMenuPresenter.m */; };
 		8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB102653C40F0048FD26 /* MainMenuView.m */; };
 		8A3AEB152653C9BF0048FD26 /* MainMenuBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3AEB142653C9BF0048FD26 /* MainMenuBuilder.m */; };
+		8A4CAF9A266D021F00FF9350 /* FirstStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAF99266D021F00FF9350 /* FirstStartViewController.m */; };
+		8A4CAF9F266D02A400FF9350 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAF9E266D02A400FF9350 /* ContentViewController.m */; };
+		8A4CAFA3266D0AEC00FF9350 /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */; };
+		8A4CAFA7266D1D5C00FF9350 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */; };
 		8A850060265D373400CEA1D1 /* MapBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85005F265D373400CEA1D1 /* MapBuilder.m */; };
 		8A850063265D374500CEA1D1 /* MapRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850062265D374500CEA1D1 /* MapRouter.m */; };
 		8A850066265D375100CEA1D1 /* MapInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A850065265D375100CEA1D1 /* MapInteractor.m */; };
@@ -64,6 +68,14 @@
 		8A3AEB102653C40F0048FD26 /* MainMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
 		8A3AEB132653C9BF0048FD26 /* MainMenuBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuBuilder.h; sourceTree = "<group>"; };
 		8A3AEB142653C9BF0048FD26 /* MainMenuBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuBuilder.m; sourceTree = "<group>"; };
+		8A4CAF98266D021F00FF9350 /* FirstStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstStartViewController.h; sourceTree = "<group>"; };
+		8A4CAF99266D021F00FF9350 /* FirstStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstStartViewController.m; sourceTree = "<group>"; };
+		8A4CAF9D266D02A400FF9350 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		8A4CAF9E266D02A400FF9350 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		8A4CAFA1266D0AEC00FF9350 /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
+		8A4CAFA5266D1D5C00FF9350 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		8A85005E265D373400CEA1D1 /* MapBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapBuilder.h; sourceTree = "<group>"; };
 		8A85005F265D373400CEA1D1 /* MapBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapBuilder.m; sourceTree = "<group>"; };
 		8A850061265D374500CEA1D1 /* MapRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapRouter.h; sourceTree = "<group>"; };
@@ -180,6 +192,59 @@
 				8AD89784264EA3A600FDAC52 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8A4CAF96266D01D800FF9350 /* FirstStart */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAF97266D01EA00FF9350 /* Controller */,
+			);
+			path = FirstStart;
+			sourceTree = "<group>";
+		};
+		8A4CAF97266D01EA00FF9350 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAF9C266D029100FF9350 /* Content */,
+				8A4CAF9B266D028500FF9350 /* FirstStart */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8A4CAF9B266D028500FF9350 /* FirstStart */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAF98266D021F00FF9350 /* FirstStartViewController.h */,
+				8A4CAF99266D021F00FF9350 /* FirstStartViewController.m */,
+			);
+			path = FirstStart;
+			sourceTree = "<group>";
+		};
+		8A4CAF9C266D029100FF9350 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAF9D266D02A400FF9350 /* ContentViewController.h */,
+				8A4CAF9E266D02A400FF9350 /* ContentViewController.m */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		8A4CAFA0266D0AD500FF9350 /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAFA1266D0AEC00FF9350 /* NotificationCenter.h */,
+				8A4CAFA2266D0AEC00FF9350 /* NotificationCenter.m */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		8A4CAFA4266D1D4700FF9350 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				8A4CAFA5266D1D5C00FF9350 /* ProgressView.h */,
+				8A4CAFA6266D1D5C00FF9350 /* ProgressView.m */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		8A850056265D36D200CEA1D1 /* Map */ = {
@@ -541,6 +606,7 @@
 		8AD897B2264EAA9800FDAC52 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8A4CAFA0266D0AD500FF9350 /* NotificationCenter */,
 				8AEBC3EA26663D55008CDABF /* CoreDataStorage */,
 				8A850077265D47C300CEA1D1 /* APIManager */,
 				8A850073265D3FEC00CEA1D1 /* LocationService */,
@@ -606,6 +672,7 @@
 		8AFC8A7D2653C23C0081577E /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8A4CAF96266D01D800FF9350 /* FirstStart */,
 				8A850087265D648200CEA1D1 /* Tickets */,
 				8A850056265D36D200CEA1D1 /* Map */,
 				8A912D042653E25100AE4B76 /* Place */,
@@ -630,6 +697,7 @@
 		8AFC8A7F2653C2BC0081577E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A4CAFA4266D1D4700FF9350 /* ProgressView */,
 				8A3AEB0F2653C40F0048FD26 /* MainMenuView.h */,
 				8A3AEB102653C40F0048FD26 /* MainMenuView.m */,
 			);
@@ -744,6 +812,8 @@
 				8AEBC40926664718008CDABF /* TicketsInteractor.m in Sources */,
 				8A3AEB112653C40F0048FD26 /* MainMenuView.m in Sources */,
 				8A850063265D374500CEA1D1 /* MapRouter.m in Sources */,
+				8A4CAF9F266D02A400FF9350 /* ContentViewController.m in Sources */,
+				8A4CAFA7266D1D5C00FF9350 /* ProgressView.m in Sources */,
 				8A850069265D376100CEA1D1 /* MapPresenter.m in Sources */,
 				8AD897A9264EA97D00FDAC52 /* Country.m in Sources */,
 				8A912D182653E31400AE4B76 /* PlaceBuilder.m in Sources */,
@@ -766,10 +836,12 @@
 				8A912D142653E2E800AE4B76 /* PlaceInteractor.m in Sources */,
 				8AD89796264EA3A600FDAC52 /* main.m in Sources */,
 				8A3AEB082653C3580048FD26 /* MainMenuRouter.m in Sources */,
+				8A4CAF9A266D021F00FF9350 /* FirstStartViewController.m in Sources */,
 				8A85006F265D377F00CEA1D1 /* MapView.m in Sources */,
 				8A85007E265D483E00CEA1D1 /* Ticket.m in Sources */,
 				8A912D0E2653E2C800AE4B76 /* PlaceView.m in Sources */,
 				8A850082265D489200CEA1D1 /* MapPrice.m in Sources */,
+				8A4CAFA3266D0AEC00FF9350 /* NotificationCenter.m in Sources */,
 				8AFC8A862653C30C0081577E /* MainMenuViewController.m in Sources */,
 				8A85008E265D64EB00CEA1D1 /* TicketsBuilder.m in Sources */,
 				8A3AEB152653C9BF0048FD26 /* MainMenuBuilder.m in Sources */,

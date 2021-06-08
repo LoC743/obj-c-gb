@@ -10,6 +10,7 @@
 #import "TicketsBuilder.h"
 #import "MapBuilder.h"
 #import "Colors.h"
+#import "NotificationCenter.h"
 
 @interface AppDelegate ()
 
@@ -48,6 +49,8 @@
     tabBarController.viewControllers = tabItems;
     
     self.window.rootViewController = tabBarController;
+    
+    [[NotificationCenter sharedInstance] registerService];
     [self.window makeKeyAndVisible];
 
     return YES;

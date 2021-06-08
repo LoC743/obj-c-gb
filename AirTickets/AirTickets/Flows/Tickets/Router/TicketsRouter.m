@@ -9,12 +9,14 @@
 
 @implementation TicketsRouter
 
-- (void)showAlertWithAction:(UIAlertAction *)action {
+- (void)showAlertWithActions:(NSArray *)actions {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
 
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
-    [alertController addAction:action];
     [alertController addAction:cancelAction];
+    for (UIAlertAction *action in actions) {
+        [alertController addAction:action];
+    }
     [self.viewController presentViewController:alertController animated:YES completion:nil];
 }
 

@@ -78,7 +78,7 @@
 - (void)setFavouriteTicket:(FavouriteTicket *)favouriteTicket {
     _favouriteTicket = favouriteTicket;
     
-    self.priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favouriteTicket.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"%@ руб.", favouriteTicket.price];
     self.placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favouriteTicket.from, favouriteTicket.to];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

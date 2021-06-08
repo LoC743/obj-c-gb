@@ -7,12 +7,17 @@
 
 #import "TicketsTableViewController.h"
 #import "TicketTableViewCell.h"
+#import "CoreDataStorage.h"
+#import "NotificationCenter.h"
 
 @interface TicketsTableViewController ()
 
 @property (strong, nonatomic) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (nonatomic, strong) UITextField *dateTextField;
 
 @property BOOL isFavorites;
+@property (strong, nonatomic) TicketTableViewCell *notificationCell;
 
 @end
 
@@ -23,6 +28,7 @@
     if (self) {
         self.presenter = presenter;
         self.title = @"Билеты";
+        [self setupDatePicker];
     }
     return self;
 }
@@ -42,6 +48,27 @@
     self.navigationItem.titleView = self.segmentedControl;
 }
 
+- (void)setupDatePicker {
+    self.datePicker = [UIDatePicker new];
+    self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+    self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+    self.datePicker.minimumDate = [NSDate date];
+    
+    self.dateTextField = [UITextField new];
+    self.dateTextField.hidden = YES;
+    self.dateTextField.inputView = self.datePicker;
+    
+    UIToolbar *keyboardToolbar = [UIToolbar new];
+    UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidTap:)];
+    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonDidTap:)];
+    keyboardToolbar.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    keyboardToolbar.items = @[cancelBarButton, flexBarButton, doneBarButton];
+    
+    self.dateTextField.inputAccessoryView = keyboardToolbar;
+    [self.view addSubview:self.dateTextField];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,7 +82,6 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     if (self.isFavorites) {
         [self valueChanged:self.segmentedControl];
-        [self.tableView reloadData];
     }
 }
 
@@ -66,6 +92,44 @@
         self.tickets = [self.presenter getFavouritesMapPrice];
     }
     [self.tableView reloadData];
+}
+
+- (void)doneButtonDidTap:(UIBarButtonItem *)sender {
+    if (self.datePicker.date && self.notificationCell) {
+        NSString *message = [NSString stringWithFormat:@"%@ - %@ за %@ руб.", self.notificationCell.ticket.from, self.notificationCell.ticket.to, self.notificationCell.ticket.price];
+        NSURL *imageURL;
+
+        Notification notification = NotificationMake(@"Напоминание о билете", message, self.datePicker.date, imageURL);
+        [NotificationCenter.sharedInstance sendNotification:notification];
+
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Успешно" message:[NSString stringWithFormat:@"Уведомление будет отправлено - %@", _datePicker.date] preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+            [CoreDataStorage.sharedInstance addToFavourite:self.notificationCell.ticket];
+            self.datePicker.date = [NSDate date];
+            self.notificationCell = nil;
+            [self.view endEditing:YES];
+        }];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+- (void)cancelButtonDidTap:(UIBarButtonItem *)sender {
+    self.notificationCell = nil;
+    [self.view endEditing:YES];
+}
+
+- (void)removeTicket:(Ticket *)ticket withIndexPath:(NSIndexPath *)indexPath {
+    NSMutableArray *tempTickets = [[NSMutableArray alloc] initWithArray:self.tickets];
+    [tempTickets removeObjectAtIndex:indexPath.row];
+    self.tickets = tempTickets;
+    
+    if (self.tickets.count != 0) {
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        [self.tableView reloadData];
+    }
+
 }
 
 
@@ -82,9 +146,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Ticket *ticket = self.tickets[indexPath.row];
     
-    if (self.isFavorites) { return; }
-    [self.presenter viewDidTapCellWithTicket: self.tickets[indexPath.row]];
+    if (self.isFavorites) {
+        UIAlertAction *removeAction = [UIAlertAction actionWithTitle:@"Удалить" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self removeTicket:ticket withIndexPath:indexPath];
+            [CoreDataStorage.sharedInstance removeFromFavourite:ticket];
+        }];
+        
+        [self.presenter viewDidTapCellWithActions:@[removeAction]];
+        
+        return;
+    }
+    
+    UIAlertAction *favouriteAction;
+    if ([CoreDataStorage.sharedInstance isFavourite:ticket]) {
+        favouriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [CoreDataStorage.sharedInstance removeFromFavourite:ticket];
+        }];
+    } else {
+        favouriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[CoreDataStorage sharedInstance] addToFavourite:ticket];
+        }];
+    }
+    
+    UIAlertAction *notificationAction = [UIAlertAction actionWithTitle:@"Напомнить" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        self.notificationCell = [tableView cellForRowAtIndexPath:indexPath];
+        [self.dateTextField becomeFirstResponder];
+    }];
+    
+    
+    [self.presenter viewDidTapCellWithActions:@[favouriteAction, notificationAction]];
 }
 
 
@@ -105,6 +197,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 140.0;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.transform = CGAffineTransformMakeTranslation(self.tableView.bounds.size.width, 0);
+    cell.alpha = 0;
+    
+    [UIView animateWithDuration:0.95 delay:0.05 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        cell.transform = CGAffineTransformMakeTranslation(0, 0);
+        cell.alpha = 1;
+    } completion:nil];
 }
 
 @end

@@ -6,6 +6,7 @@
 //
 
 #import "MainMenuPresenter.h"
+#import "ProgressView.h"
 
 @implementation MainMenuPresenter
 
@@ -58,7 +59,14 @@
 }
 
 - (void)viewDidMoveToTickets {
+    [ProgressView.sharedInstance show:^{}];
+    if (self.viewInput.searchRequest.destionation == nil) {
+        [ProgressView.sharedInstance dismiss:^{}];
+        [self.router showAlertWithTitle:@"Увы!" withMessage:@"По данному направлению билетов не найдено"];
+        return;
+    }
     [self.interactor loadTicketsWithRequest:self.viewInput.searchRequest WithCompletion:^(NSArray * _Nonnull tickets) {
+        [ProgressView.sharedInstance dismiss:^{}];
         if (tickets.count > 0) {
             [self.router moveToTicketsVCWithTickets: tickets];
         } else {

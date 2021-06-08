@@ -9,6 +9,8 @@
 #import "MainMenuView.h"
 #import "Colors.h"
 #import "DataManager.h"
+#import "FirstStartViewController.h"
+#import "ProgressView.h"
 
 @interface MainMenuViewController ()
 
@@ -48,6 +50,22 @@
     [self.mainMenuView.searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self presentFirstViewControllerIfNeeded];
+}
+
+- (void)presentFirstViewControllerIfNeeded {
+    BOOL isFirstStart = [[NSUserDefaults standardUserDefaults] boolForKey:@"first_start"];
+    if (!isFirstStart) {
+        FirstStartViewController *firstStartViewController = [[FirstStartViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        firstStartViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        [self presentViewController:firstStartViewController animated:YES completion:nil];
+    }
 }
 
 - (void)placeButtonDidTap:(UIButton *)sender {

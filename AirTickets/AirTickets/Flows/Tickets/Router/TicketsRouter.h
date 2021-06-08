@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TicketsRouterInput <NSObject>
 
-- (void)showAlertWithAction:(UIAlertAction *)action;
+- (void)showAlertWithActions:(NSArray *)actions;
 
 @end
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) UIViewController *viewController;
 
-- (void)showAlertWithAction:(UIAlertAction *)action;
+- (void)showAlertWithActions:(NSArray *)actions;
 
 @end
 
