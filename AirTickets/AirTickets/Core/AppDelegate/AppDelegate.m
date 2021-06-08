@@ -26,11 +26,11 @@
         
     MainMenuViewController *mainMenuVC = (MainMenuViewController *)[MainMenuBuilder build];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainMenuVC];
-    navController.tabBarItem.title = @"Поиск";
+    navController.tabBarItem.title = NSLocalizedString(@"searchBarTitle", "");
     navController.tabBarItem.image = [UIImage systemImageNamed:@"magnifyingglass.circle.fill"];
     
     MapViewController *mapVC = (MapViewController *)[MapBuilder build];
-    mapVC.tabBarItem.title = @"Карта цен";
+    mapVC.tabBarItem.title = NSLocalizedString(@"mapBarTitle", "");
     mapVC.tabBarItem.image = [UIImage systemImageNamed:@"map.fill"];
     
     UITabBarController *tabBarController = [UITabBarController new];
@@ -38,7 +38,7 @@
     tabBarController.tabBar.tintColor = UIColor.whiteColor;
     
     TicketsTableViewController *favoriteVC = (TicketsTableViewController *) [TicketsBuilder buildFavoutives];
-    favoriteVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Избранное" image:[UIImage systemImageNamed:@"star"] selectedImage:[UIImage systemImageNamed:@"star.fill"]];
+    favoriteVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"favBarTitle", "") image:[UIImage systemImageNamed:@"star"] selectedImage:[UIImage systemImageNamed:@"star.fill"]];
     UINavigationController *favouriteNavVC = [[UINavigationController alloc] initWithRootViewController:favoriteVC];
     
     NSMutableArray *tabItems = [[NSMutableArray alloc] initWithCapacity:3];

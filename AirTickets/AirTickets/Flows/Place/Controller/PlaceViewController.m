@@ -51,9 +51,9 @@
     [self changeSource];
     
     if (self.placeType == PlaceTypeDeparture) {
-        self.title = @"Откуда";
+        self.title = NSLocalizedString(@"departureTitle", "");
     } else {
-        self.title = @"Куда";
+        self.title = NSLocalizedString(@"arrivalTitle", "");
     }
 }
 

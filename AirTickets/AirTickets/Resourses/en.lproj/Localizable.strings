@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  AirTickets
+
+  Created by Alexey on 08.06.2021.
+  
+*/
+
+// Core
+
+"searchBarTitle" = "Search";
+"mapBarTitle" = "Price map";
+"favBarTitle" = "Favourites";
+
+// Main Menu
+
+"searchTitle" = "Search";
+"departureTitle" = "Where";
+"arrivalTitle" = "To";
+"searchButtonTitle" = "Find";
+
+// Place
+
+"cities" = "Cities";
+"airports" = "Airports";
+
+// Map
+
+"pinAction" = "Pin actions";
+"pinActionMessage" = "What to do with selected pin?";
+
+// Actions
+
+"addToFavourites" = "Add to favourites";
+"removeFromFavourites" = "Remove from favourites";
+"close" = "Close";
+
+// Tickets
+
+"ticketsTitle" = "Tickets";
+"tickets" = "Tickets";
+"map" = "Map";
+
+// Ticket Cell
+
+"rubles" = "RUB";
+
+// Ticket Notification
+
+"ticketNotification" = "Ticket notification";
+"notificationWillBeSent" = "Notification will be sent";
+"for" = "for";
+"success" = "Success";
+"remove" = "Remove";
+"notify" = "Notify";
+"ticketAction" = "Ticket actions";
+"ticketActionMessage" = "What to do with selected ticket?";
+
+// First start
+
+"about" = "ABOUT APP";
+"aviaTickets" = "AIR TICKETS";
+"priceMapFirst" = "PRICE MAP";
+"favFirst" = "FAVOURITES";
+"searchAppTickets" = "Flight search app";
+"cheapestAviTickets" = "Search the cheapest flights";
+"wathcMapPrice" = "Check the price map";
+"saveTicketsToFav" = "Save selected tickets to favorites";
+"next" = "NEXT";
+"ready" = "READY";

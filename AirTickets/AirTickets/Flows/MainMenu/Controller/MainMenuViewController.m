@@ -43,7 +43,7 @@
     
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.navigationController.navigationBar.layer.cornerRadius = 15.0;
-    self.title = @"Поиск";
+    self.title = NSLocalizedString(@"searchTitle", "");
     
     [self.mainMenuView.departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.mainMenuView.arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];

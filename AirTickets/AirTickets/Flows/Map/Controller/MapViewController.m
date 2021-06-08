@@ -83,18 +83,18 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с меткой" message:@"Что необходимо сделать с выбранной меткой?" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"pinAction", "") message:NSLocalizedString(@"pinActionMessage", "") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *favoriteAction;
     SimpleMapPrice *price = [[SimpleMapPrice alloc] initWithDestination:view.annotation.title withPrice:view.annotation.subtitle];
     if ([CoreDataStorage.sharedInstance isFavouriteMapPrice:price]) {
-        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        favoriteAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"removeFromFavourites", "") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             [CoreDataStorage.sharedInstance removeFromFavouriteMapPrice:price];
             UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [button setImage:[UIImage systemImageNamed:@"star"] forState:normal];
             view.rightCalloutAccessoryView = button;
         }];
     } else {
-        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        favoriteAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"addToFavourites", "") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [CoreDataStorage.sharedInstance addToFavouriteMapPrice:price];
             UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [button setImage:[UIImage systemImageNamed:@"star.fill"] forState:normal];
@@ -103,7 +103,7 @@
         }];
     }
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"close", "") style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:favoriteAction];
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];

@@ -38,7 +38,7 @@
 }
 
 - (void)configureSegmanetedControl {
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Города", @"Аэропорты"]];
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedString(@"cities", ""), NSLocalizedString(@"airports", "")]];
     self.segmentedControl.selectedSegmentIndex = 0;
 }
 

@@ -48,7 +48,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             annotation.title = [NSString stringWithFormat:@"%@ (%@)", price.destination.name, price.destination.code];
-            annotation.subtitle = [NSString stringWithFormat:@"%ld руб.", price.value];
+            annotation.subtitle = [NSString stringWithFormat:@"%ld %@.", price.value, NSLocalizedString(@"rubles", "")];
             annotation.coordinate = price.destination.coordinate;
             [self.viewInput.mapView.mapKitView addAnnotation: annotation];
         });

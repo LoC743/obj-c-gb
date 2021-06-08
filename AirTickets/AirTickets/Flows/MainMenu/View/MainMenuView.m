@@ -24,7 +24,7 @@
 }
 
 - (void)configureUI {
-    self.backgroundColor = UIColor.whiteColor;//UIColorFromRGB(orangeCrayolaColor);
+    self.backgroundColor = UIColor.whiteColor;
     
     self.arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -42,13 +42,13 @@
     CGFloat topPadding = window.safeAreaInsets.top;
     CGFloat topbarHeight = window.windowScene.statusBarManager.statusBarFrame.size.height;
     
-    [self.departureButton setTitle:@"Откуда" forState: UIControlStateNormal];
+    [self.departureButton setTitle:NSLocalizedString(@"departureTitle", "") forState: UIControlStateNormal];
     self.departureButton.frame = CGRectMake(30.0, topbarHeight + topPadding + 15.0 + buttonHeight, buttonWidth, buttonHeight);
     
-    [self.arrivalButton setTitle:@"Куда" forState: UIControlStateNormal];
+    [self.arrivalButton setTitle:NSLocalizedString(@"arrivalTitle", "") forState: UIControlStateNormal];
     self.arrivalButton.frame = CGRectMake(30.0, CGRectGetMaxY(self.departureButton.frame) + buttonsOffset, buttonWidth, buttonHeight);
     
-    [self.searchButton setTitle:@"Найти" forState: UIControlStateNormal];
+    [self.searchButton setTitle:NSLocalizedString(@"searchButtonTitle", "") forState: UIControlStateNormal];
     self.searchButton.backgroundColor = UIColor.darkGrayColor;
     self.searchButton.frame = CGRectMake(30.0, CGRectGetMaxY(self.arrivalButton.frame) + 2*buttonsOffset, buttonWidth, buttonHeight);
     
