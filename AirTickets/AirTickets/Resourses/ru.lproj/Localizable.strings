@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  AirTickets
+
+  Created by Alexey on 08.06.2021.
+  
+*/
+
+// Core
+
+"searchBarTitle" = "Поиск";
+"mapBarTitle" = "Карта цен";
+"favBarTitle" = "Избранное";
+
+// Main Menu
+
+"searchTitle" = "Поиск";
+"departureTitle" = "Откуда";
+"arrivalTitle" = "Куда";
+"searchButtonTitle" = "Найти";
+
+// Place
+
+"cities" = "Города";
+"airports" = "Аэропорты";
+
+// Map
+
+"pinAction" = "Действия с меткой";
+"pinActionMessage" = "Что необходимо сделать с выбранной меткой?";
+
+// Actions
+
+"addToFavourites" = "Добавить в избранное";
+"removeFromFavourites" = "Удалить из избранного";
+"close" = "Закрыть";
+
+// Tickets
+
+"ticketsTitle" = "Билеты";
+"tickets" = "Билеты";
+"map" = "Карта";
+
+// Ticket Cell
+
+"rubles" = "руб";
+
+// Ticket Notification
+
+"ticketNotification" = "Напоминание о билете";
+"notificationWillBeSent" = "Уведомление будет отправлено";
+"for" = "за";
+"success" = "Успешно";
+"remove" = "Удалить";
+"notify" = "Напомнить";
+"ticketAction" = "Действия с билетом";
+"ticketActionMessage" = "Что необходимо сделать с выбранным билетом?";
+
+// First start
+
+"about" = "О ПРИЛОЖЕНИИ";
+"aviaTickets" = "АВИАБИЛЕТЫ";
+"priceMapFirst" = "КАРТА ЦЕН";
+"favFirst" = "ИЗБРАННОЕ";
+"searchAppTickets" = "Приложение для поиска авиабилетов";
+"cheapestAviTickets" = "Находите самые дешевые авиабилеты";
+"wathcMapPrice" = "Просматривайте карту цен";
+"saveTicketsToFav" = "Сохраняйте выбранные билеты в избранное";
+"next" = "ДАЛЕЕ";
+"ready" = "ГОТОВО";
